@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+</head>
+<body>
+    <nav>
+        <a href="#" class="brand">
+            <span> Universities </span>
+        </a>
+
+        <div class="menu">
+            <form style="display: flex; align-items: center;">
+                <input placeholder="Search Universities" />
+                <input type="submit" value="search">
+            </form>
+        </div>
+    </nav>
+
+    <div class="container" style="margin: 60px 0px 0px 20px;">
+
+        <div style="display: flex; justify-content: center;">
+            <a href="/" style="margin-right: 50px;">Australia</a>
+            <a href="/denmark" style="margin-right: 50px;">Denmark</a>
+            <a href="/france" style="margin-right: 50px;">France</a>
+            <a href="/usa" style="margin-right: 50px;">USA</a>
+        </div>
+
+        <h1><%= title %></h1>
+
+        <% uni_data.forEach( (row)=> { %>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+                  <h3>
+                      <%= row.name %>
+                 </h3>
+                 <a class="button" href="<%= row.web_pages[0] %>" target="_blank">visit</a>
+            </div>
+         <% }); %>
+        
+    </div>
+</body>
+</html>
